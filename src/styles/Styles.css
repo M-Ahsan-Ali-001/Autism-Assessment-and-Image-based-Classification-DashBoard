@@ -1,0 +1,356 @@
+#side-bar{
+display: flex;
+background-color:#262b40;
+flex-direction: column;
+flex: 0.2;
+;
+}
+
+
+#body-rout{
+    flex: 0.8;
+    background-color: #f5f8fb;
+    
+
+}
+
+#home-page{
+
+    display: flex;
+    flex-direction: row;
+    background-color: #f5f8fb;
+    height: 100vh;
+
+}
+
+
+
+
+
+#image-sidebar {
+
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0%;
+    
+    align-self: center;
+
+    
+}
+
+#imageSide{
+    margin: 0px;
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    text-align: center;
+    
+}
+
+
+#heading-sidebar{
+    
+   
+    color: white;
+    text-align: center;
+    padding-left: 30px;
+    margin-top: 10px;
+    padding-right: 30px;
+   
+
+    }
+    
+    #heading-sidebar p{
+    font-size: large;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.2;
+    margin-top: 0%;
+    padding: 0%;
+
+    }
+
+
+    #sidebar-buttons{
+        align-self: center;
+        margin-top: 30px;
+    }
+
+    
+    #sidebar-buttons li{
+        color: white;
+        list-style: none;
+        font-size:17px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        
+        
+
+
+    }
+
+    #sidebar-buttons li a{
+        color: white;
+        text-decoration: none;
+
+
+    }
+
+    .li-buttons{
+    
+     
+        margin-bottom: 35px;
+        padding: 12px;
+        border-radius: 5px;
+        border: .0625rem solid #4c5680;
+
+    }
+
+    #login-button{
+        
+        display: flex;
+        justify-content: right;
+        margin-right: 25px;
+        
+    }
+    #login-button p{
+        border: 2px solid rgba(78, 74, 74, 0.418);
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 9px;
+        padding: 5px;
+        padding-left: 50px;
+        
+        padding-right: 50px;
+        background-color:#262b40;
+        color: white;
+
+
+     
+
+ 
+
+
+    }
+    #sub-bar{
+
+        display: block;
+        position: absolute;
+        visibility:hidden;
+
+        top:58px;
+        right: 23px;
+        
+        background-color: rgba(38, 43, 64, 0.548);
+        height: 30px;
+        width: 100px;
+        text-align: center;
+    }
+    
+    #sub-bar:hover{
+        background-color: black
+
+    }
+
+    #sub-bar li{
+
+        list-style: none;
+        color: white;
+        margin-top: 2px;
+
+
+    }
+
+   
+    #table{
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px;
+
+      
+        text-align: center;
+        background-color: white;
+        border-radius: 15px;
+        max-width: 800px;
+        
+    }
+
+    #row-table{
+   
+        
+      
+        
+    }
+    #cell-row-table{
+    
+        width: 600px;
+        border-bottom: 0.1px solid #262b40;
+      border-radius: 5px;
+      padding: 8px;
+      font-size: 20px;
+        
+       
+    }
+
+    .heading{
+
+        font-weight: bolder;
+    }
+
+
+#rowDash{
+    display: flex;
+    flex-direction: row;
+    
+}
+    #box1{
+
+        background-image:  radial-gradient(circle 248px at center,#16d9e3 0%,#30c7ec 47%,#46aef7 100%)!important;
+        width: 150px;
+       height: 150px;
+       margin-right: 50px;
+    
+    }
+
+    #box2{
+
+        background-image:  linear-gradient(-20deg,#2b5876 0%,#4e4376 100%)!important;;
+        width: 150px;
+       height: 150px;
+       margin-right: 50px;
+    }
+
+    #box3{
+
+   background-image: linear-gradient(to top,#0ba360 0%,#3cba92 100%)!important;;
+        width: 150px;
+       
+    height: 150px;
+    margin-right: 50px;
+    }
+
+    #box4{
+        background-image: linear-gradient(to top,#ff0844 0%,#ffb199 100%)!important;
+        width: 150px;
+       height: 150px;
+       margin-right: 50px;
+    }
+
+    #card-holder{
+      
+        display: flex;
+        flex-direction: row;
+      
+    justify-content: center;
+    
+       }
+       #head-dash{
+
+        font-size: 30px;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-bottom: 50px;
+       }
+       #chart{
+     margin: 50px;
+  
+       }
+
+       #box1, #box2,#box3,#box4 {
+
+        align-content: center;
+       }
+
+       #box1, #box2,#box3,#box4 {
+        color: white;
+        
+
+       }
+
+
+       #body-login{
+        background-color:#262b40;
+        height: 100vh;
+
+
+
+       }
+
+       #card-login{
+        display: flex;
+
+       
+        
+        width: 100%;
+        height: 100%;
+        justify-self: center;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+
+       }
+       #card-hold{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 500px;
+        height: 500px;
+        background-color:rgb(192, 185, 185);
+        border-radius: 30px;
+        
+
+
+        
+
+       }
+       #text-log{
+       max-width: 250px;
+       justify-self: center;
+       align-self: center;
+      text-align: center;
+     
+      font-weight: bold;
+      padding: 0%;
+      margin: 5px;
+       }
+       #imageLogin{
+        display: flex;
+        margin: 0px;
+        height: 100px;
+        width: 100px;
+        object-fit: contain;
+        justify-self: center;
+        align-self: center;
+       
+
+       }
+
+       .input-username{
+        display: flex;
+        margin: 0px;
+        height: 17px;
+        width: 250px;
+        border-radius: 20px;
+        padding: 8px;
+       
+        justify-self: center;
+        align-self: center;
+       }
+       #form-login{
+        display: flex;
+        flex-direction: column
+  ;
+        
+       
+        justify-self: center;
+        align-self: center;
+       }
+
+       #button-login{
+        border-radius: 20px;
+        border: 1px solid transparent;
+        height: 38px;
+        color: white;
+        background-color: #262b40;
+       }
