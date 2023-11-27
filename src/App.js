@@ -7,7 +7,7 @@ import Login from './pages/login';
 function App() {
   return (
 
-//<HomePage></HomePage>
+
 <Login></Login>
   );
 }
