@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
-var Employee = mongoose.model('adhd_',{
-    _id:{type:Object},
-result_score : {type :Number }, 
+var Employee = mongoose.model('adhd',{
+    user_id:{type:Object},
+score : {type :Number }, 
 
 })
 
