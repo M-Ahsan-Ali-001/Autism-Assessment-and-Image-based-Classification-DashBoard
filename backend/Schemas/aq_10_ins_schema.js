@@ -6,6 +6,7 @@ score : {type :Number },
 
 user_id : {type :String }, 
 date : {type :Date }, 
+ state : {type :Number },  
 
 })
 
