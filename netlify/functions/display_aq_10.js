@@ -26,12 +26,6 @@ exports.handler = async function(event, context) {
       return {
         statusCode: 200,
         body: JSON.stringify(doc),
-        headers: {
-            'Access-Control-Allow-Origin': '*', // replace '*' with your origin
-                     "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-                "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With"
-         
-        }
     };
 
   }
