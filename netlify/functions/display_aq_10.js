@@ -28,10 +28,8 @@ exports.handler = async function(event, context) {
         body: JSON.stringify(doc),
         headers: {
             'Access-Control-Allow-Origin': '*', // replace '*' with your origin
-            'Access-Control-Allow-Headers': 'Content-Type',
-                        "Access-Control-Allow-Origin": "*",
-          "    Access-Control-Allow-Methods":" GET, POST, PUT, DELETE",
-"Access-Control-Allow-Headers": "Authorization"
+                     "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With"
          
         }
     };
