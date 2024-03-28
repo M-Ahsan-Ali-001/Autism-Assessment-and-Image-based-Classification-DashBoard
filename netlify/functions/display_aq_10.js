@@ -13,15 +13,27 @@ exports.handler = async function(event, context) {
         const doc = await Employee.collection.find({ user_id: id }).toArray();
         if (doc) {
             console.log("@*******", doc);
-        }
 
-        return {
+                    return {
             statusCode: 200,
             body: JSON.stringify(doc),
             headers: {
                 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Headers': 'Content-Type',
             }
+        }
+            else{
+
+                    return {
+            statusCode: 200,
+            body: "Erroe!",
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': 'Content-Type',
+            }
+            }
+
+
         };
     } catch (err) {
         return {
