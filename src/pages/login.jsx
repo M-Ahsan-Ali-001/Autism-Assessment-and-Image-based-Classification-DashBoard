@@ -1,16 +1,39 @@
 import React, { useEffect, useState } from "react";
 import HomePage from "./homePage";
 import Mainlog from "../images/Mainlog0.png"
+import { useCookies } from 'react-cookie';
 function Login() {
+
+
+  
   const [logins, setLogin] = useState(false);
+  const [cookies, setCookie] = useCookies(['user']);
   let a = 0
+
+  useEffect(() => {
+
+    console.log(cookies.login);
+    console.log(cookies.email);
+    console.log(cookies.pass);
+    if (cookies.login === true && cookies.email === "admin123@asddetector.com" && cookies.pass === "admin123_") {
+      setLogin(true);
+    }
+    console.log(logins)
+  }, [cookies]);
   const checkLogin=()=>{
     let email = document.getElementById("ipt1").value
     let pass = document.getElementById("ipt2").value
 
-    if(email === "admin123@asddetector.com" && pass === "_12@`" ){
+    
+
+    if(email === "admin123@asddetector.com" && pass === "admin123_" ){
       
         setLogin(true)
+        console.log(cookies.login)
+        setCookie('login', true, { path: '/' });
+        setCookie('email', email, { path: '/' });
+      setCookie('pass', pass, { path: '/' });
+
     }
     else{
         alert("wrong credentials")
@@ -43,7 +66,7 @@ function Login() {
             </div>
           </div>
         </div>
-      ) : logins === true ? (
+      ) :  logins === true  ? (
         <HomePage setLogin={setLogin}/>
       ) : null}
     </div>

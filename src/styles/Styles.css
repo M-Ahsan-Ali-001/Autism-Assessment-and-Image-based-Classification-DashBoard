@@ -1,32 +1,46 @@
-#side-bar{
-display: flex;
-background-color:#262b40;
-flex-direction: column;
-flex: 0.2;
-;
-}
 
 
-#body-rout{
-    flex: 0.8;
-    background-color: #f5f8fb;
-    
+#body-rout {
+    flex: 0.75;
+   position: absolute;
+    top: 0;
+    left: 200px; /* Assuming your sidebar width is 200px */
+    bottom: 0;
+    right: 0;
+    overflow-y: auto;
+     /* Add scrollbar if content overflows vertically */
+     background-color: #2B3640;
+    }
+  
 
-}
 
 #home-page{
 
     display: flex;
     flex-direction: row;
-    background-color: #f5f8fb;
-    height: 100vh;
+    background-color: #2B3640;
+ 
+  
+
 
 }
 
 
 
+#side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    z-index: 1;
+    display: flex;
+background-color:#262b40;
 
-
+flex-direction: column;
+    /* Adjust width as needed */
+   /* Adjust background color as needed */
+  }
 #image-sidebar {
 
     text-align: center;
@@ -50,7 +64,7 @@ flex: 0.2;
 
 #heading-sidebar{
     
-   
+
     color: white;
     text-align: center;
     padding-left: 30px;
@@ -196,6 +210,17 @@ flex: 0.2;
 
         font-weight: bolder;
     }
+    #Line-chart{
+        max-width:  1400px;
+        padding: 20px;
+       background-color: white;
+       border-radius: 20px;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+
+    }
 
 
 #rowDash{
@@ -206,7 +231,7 @@ flex: 0.2;
     #box1{
 
         background-image:  radial-gradient(circle 248px at center,#16d9e3 0%,#30c7ec 47%,#46aef7 100%)!important;
-        width: 150px;
+        width: 250px;
        height: 150px;
        margin-right: 50px;
     
@@ -215,23 +240,66 @@ flex: 0.2;
     #box2{
 
         background-image:  linear-gradient(-20deg,#2b5876 0%,#4e4376 100%)!important;;
-        width: 150px;
+        width: 250px;
        height: 150px;
        margin-right: 50px;
+      
+    
     }
 
     #box3{
 
    background-image: linear-gradient(to top,#0ba360 0%,#3cba92 100%)!important;;
-        width: 150px;
+   width: 250px;;
        
     height: 150px;
     margin-right: 50px;
+
+    }
+
+  h1{
+        color: white;
+    }
+    #tb1,#tb2{
+
+        display: inline-block;
+        margin: 20px;
+        background-color: white;
+        padding: 15px;
+        border-radius: 20px;
+
+    }
+    #field_S{
+        background-color: transparent;
+        border: 1px solid rgb(245, 245, 245);
+        color: white;
+        width: 600px !important;
+        height: 28px;
+        border-radius: 10px;
+
+    }
+
+    #buttonS{
+        background-color: #04AA6D ;
+        color: white;
+        border: 0px;
+
+
+        height: 35px;
+        width: 170px;
+        border-radius: 50px;
+         margin: 12px;
+    }
+    #bodyS{
+        visibility: hidden;
+    }
+    #header_{
+        color: #4d3030;
     }
 
     #box4{
         background-image: linear-gradient(to top,#ff0844 0%,#ffb199 100%)!important;
-        width: 150px;
+        width: 250px;
        height: 150px;
        margin-right: 50px;
     }
@@ -250,22 +318,45 @@ flex: 0.2;
         font-weight: bold;
         margin-top: 30px;
         margin-bottom: 50px;
+        color: white;
        }
        #chart{
      margin: 50px;
+
   
        }
 
-       #box1, #box2,#box3,#box4 {
+       #chart1,#chart2{
+        display: inline-block;
+        width: 45%;
+        padding: 1%;
+        height: 450%;
+       }
 
-        align-content: center;
+       #chart2{
+        background-color:#262b40;
+
+        border-radius: 20px;
+       }
+       #chart1{
+        background-color:white;
+
+        border-radius: 20px;
+        margin-right: 50px;
+       }
+       #test{
+        border-radius: 20%;
        }
 
        #box1, #box2,#box3,#box4 {
+
+        border-radius: 20px;
         color: white;
-        
-
+       
        }
+     
+
+   
 
 
        #body-login{

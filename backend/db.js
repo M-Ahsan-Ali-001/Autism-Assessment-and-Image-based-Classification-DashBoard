@@ -1,5 +1,5 @@
 const mongoose = require("mongoose"); // importing header files
-const mongoURI = ""; //network address 
+const mongoURI = "mongodb+srv://ASD_DB_user:USERtest1@atlascluster.gcltstq.mongodb.net/"; //network address 
 
 const connectToMongo = async () => { //asynronus function to connect
   try {

@@ -6,7 +6,7 @@ function Sidebar({butD,setbutD}) {
 
 
 
-  const listButtons = ["Dashboard", "Users", "AQ_10", "AI","ADHD"];
+  const listButtons = ["Dashboard", "Users", "search"];
 
   let choice=document.getElementById("Dashboard")
   return <div id="side-bar" >

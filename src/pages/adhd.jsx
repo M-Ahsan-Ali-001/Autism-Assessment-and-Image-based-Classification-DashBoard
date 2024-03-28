@@ -1,60 +1,101 @@
-import React, { useEffect,useState } from "react";
-
+import React, { useEffect, useState,useRef } from "react";
 import axios from "axios";
-function ADHD(){
+import { CircularProgress, Button } from "@mui/material";
 
-    const [get, setGet] = useState([]);
-    axios.defaults.headers.get['Content-Type'] ='application/x-www-form-urlencoded';
+function ADHD() {
+  const [data, setData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10); // Change as per your requirement
+  const tbodyRef = useRef(null);
 
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await axios.get('',{
-              headers: {
-                "Cache-Control": "no-cache",
-                "Content-Type": "application/x-www-form-urlencoded",
-              },
-            });
-            setGet(response.data);
-            console.log(response.data)
-          } catch (error) {
-           console.log(error)
-          } finally {
-            console.log("error")
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post(
+          "https://dashborad-autism.netlify.app/.netlify/functions/adhd_controller",
+          {
+            password: "___*79"
           }
-        };
-    
-        fetchData();
-      }, []);
-    return(
-        <div>
- <h1>ADHD  Results</h1>
-            <table id="table">
+        );
+        setData(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-            <tr id="row-table"> 
-                    <td id="cell-row-table" className="heading"> id</td>
-        
-                    <td  id="cell-row-table" className="heading"> Score</td>
-                  
+    fetchData();
+  }, []);
 
-                   </tr>
+  // Logic to get current items
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  useEffect(() => {
+    if (tbodyRef.current) {
+      // Clear tbody
+      tbodyRef.current.innerHTML = "";
 
-                {get.map((obj)=>(
-                   <tr id="row-table"> 
-                    <td id="cell-row-table"> {obj["_id"]}</td>
-        
-                    <td  id="cell-row-table"> {obj["result_score"]}</td>
-                  
+      // Render new rows
+      currentItems.forEach(obj => {
+        const tr = document.createElement("tr");
+        const td1 = document.createElement("td");
+      
+        td1.id="cell-row-table"
+        td1.textContent = obj.user_id;
+        const td2 = document.createElement("td");
+        td2.textContent = obj.score;
+        td2.id="cell-row-table"
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tbodyRef.current.appendChild(tr);
+      });
+    }
+  }, [currentItems]);
 
-                   </tr>
-
-                ))}
-            </table>
+  return (
+    <div>
+      <h1>AQ10 Results</h1>
+      {data.length !== 0 ? (
+        <>
+          <table id="table">
+            <thead>
+              <tr id="row-table">
+                <td id="cell-row-table" className="heading">
+                  id
+                </td>
+                <td id="cell-row-table" className="heading">
+                  Score
+                </td>
+              </tr>
+            </thead>
+            <tbody ref={tbodyRef} style={{}}></tbody>
+          </table>
+          {/* Pagination controls */}
+          <div style={{ textAlign: "center", marginTop: "20px" }}>
+            {Array.from({ length: Math.ceil(data.length / itemsPerPage) }).map(
+              (_, index) => (
+                <Button
+                  key={index}
+                  onClick={() => paginate(index + 1)}
+                  style={{ margin: "0 5px" }}
+                  variant={currentPage === index + 1 ? "contained" : "outlined"}
+                >
+                  {index + 1}
+                </Button>
+              )
+            )}
+          </div>
+        </>
+      ) : (
+        <div style={{ width: "50px", margin: "auto" }}>
+          <CircularProgress size={50} />
         </div>
-    )
+      )}
+    </div>
+  );
 }
-
-
 export default ADHD;

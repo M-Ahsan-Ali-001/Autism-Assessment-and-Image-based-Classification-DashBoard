@@ -6,9 +6,11 @@ import Users from "../pages/users"
 import AQ_10 from "../pages/AQ_10"
 import AI from "../pages/ai"
 import ADHD from "../pages/adhd"
+import { useCookies } from 'react-cookie';
+import SR from "../pages/search";
 function Body({condi,setLogin}) {
 
-  
+  const [cookies, setCookie] = useCookies(['user']);
   
   return (
 
@@ -30,13 +32,21 @@ function Body({condi,setLogin}) {
       >
         {" "}
         <p> Admin </p>
-        <div id="sub-bar"  onClick={()=>{setLogin(false)}}>
+        <div id="sub-bar"  onClick={()=>{setLogin(false)
+        
+        setCookie('login', false, { path: '/' });
+        setCookie('email', " ", { path: '/' });
+      setCookie('pass', " ", { path: '/' });
+      
+      }
+      
+      }>
           <li>Logout</li>
         </div>
       </div>
       
       <div className="App">
-     {condi === "Dashboard"?(<Dashboard />):condi === "Users"?(<Users/>):condi === "AQ_10"?(<AQ_10/>):condi === "AI"?(<AI/>):condi === "ADHD"?(<ADHD/>):null}
+     {condi === "Dashboard"?(<Dashboard />):condi === "Users"?(<Users/>):condi === "search"?(<SR/>):null}
 
 
      

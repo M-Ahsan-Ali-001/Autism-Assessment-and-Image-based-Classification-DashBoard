@@ -5,7 +5,7 @@ const gql = require("graphql-tag");
 
 // Set up the RestLink
 const restLink = new RestLink({
-  uri: '', // replace with your API URL
+  uri: 'https://realm.mongodb.com/api/client/v2.0/app/application-0-pitvr/auth/providers/local-userpass/', // replace with your API URL
 });
 
 // Set up the ApolloClient

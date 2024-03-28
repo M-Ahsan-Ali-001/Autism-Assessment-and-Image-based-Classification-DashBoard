@@ -1,14 +1,15 @@
-import logo from './logo.svg';
+
 import './App.css';
-import HomePage from './pages/homePage';
+import { CookiesProvider } from "react-cookie";
 import Login from './pages/login';
 
 
 function App() {
   return (
-
+    <CookiesProvider>
 
 <Login></Login>
+  </CookiesProvider>
   );
 }
 
