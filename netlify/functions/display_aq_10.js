@@ -14,27 +14,24 @@ exports.handler = async function(event, context) {
         if (doc) {
             console.log("@*******", doc);
 
-                    return {
-            statusCode: 200,
-            body: JSON.stringify(doc),
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': 'Content-Type',
-            }
+            return {
+                statusCode: 200,
+                body: JSON.stringify(doc),
+                headers: {
+                    'Access-Control-Allow-Origin': '*', // Allow requests from any origin
+                    'Access-Control-Allow-Headers': 'Content-Type', // Specify allowed headers
+                }
+            };
+        } else {
+            return {
+                statusCode: 200,
+                body: "Error!",
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Headers': 'Content-Type',
+                }
+            };
         }
-            else{
-
-                    return {
-            statusCode: 200,
-            body: "Erroe!",
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': 'Content-Type',
-            }
-            }
-
-
-        };
     } catch (err) {
         return {
             statusCode: 200,
