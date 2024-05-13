@@ -9,7 +9,6 @@ exports.handler = async function(event, context) {
 
     try {
 
-console.log("+++++++",event.body.email)
         let jsonObj ={user_id:JSON.parse(event.body).id,time:JSON.parse(event.body).time,date:JSON.parse(event.body).date}
 
         const docs = await Employee.collection.insertOne(jsonObj)
