@@ -1,10 +1,10 @@
 
 
 #body-rout {
-    flex: 0.75;
+    flex: 0.7;
    position: absolute;
     top: 0;
-    left: 200px; /* Assuming your sidebar width is 200px */
+    left: 220px; /* Assuming your sidebar width is 200px */
     bottom: 0;
     right: 0;
     overflow-y: auto;
@@ -29,6 +29,7 @@
 
 #side-bar {
     position: fixed;
+  
     top: 0;
     left: 0;
     height: 100%;
@@ -88,6 +89,8 @@ flex-direction: column;
     #sidebar-buttons{
         align-self: center;
         margin-top: 30px;
+        margin-right:29px ;
+        overflow-y: auto;
     }
 
     
@@ -212,20 +215,28 @@ flex-direction: column;
     }
     #Line-chart{
         max-width:  1400px;
+        min-width: 200px;
         padding: 20px;
        background-color: white;
        border-radius: 20px;
-        margin: auto;
+   
         margin-top: 30px;
         margin-bottom: 30px;
+        margin: auto;
+        margin-left: 10%;
+        margin-right: 10%;
 
+      
 
     }
 
 
-#rowDash{
-    display: flex;
-    flex-direction: row;
+#dash{
+display: block;
+justify-content: center;
+align-content: center;  
+align-self: center;
+justify-self: center;
     
 }
     #box1{
@@ -310,7 +321,24 @@ flex-direction: column;
         flex-direction: row;
       
     justify-content: center;
+    margin-bottom: 40px;
     
+       }
+       
+
+       #card-1,#card-2{
+        display: inline-block;
+
+        color: white;
+        margin: auto;
+
+       }
+       #card-2{
+        max-width: 400px;
+        max-height: 900px !important;
+        border: 1px solid white;
+        border-radius: 20px;
+     
        }
        #head-dash{
 
@@ -331,6 +359,7 @@ flex-direction: column;
         width: 45%;
         padding: 1%;
         height: 450%;
+      
        }
 
        #chart2{
@@ -349,9 +378,10 @@ flex-direction: column;
        }
 
        #box1, #box2,#box3,#box4 {
-
+display: inline-block;
         border-radius: 20px;
         color: white;
+        margin: 10px;
        
        }
      
@@ -445,3 +475,141 @@ flex-direction: column;
         color: white;
         background-color: #262b40;
        }
+
+
+       #tbHead {
+        background-color: #30344c;
+        color: white;
+        padding: 18px;
+        border-radius: 10px 10px 0 0; /* Rounded corners for the table head */
+        border: 1px solid DarkOrange;
+      }
+      
+      .table-0 {
+        border-collapse: separate;
+        border-spacing: 0;
+     
+   
+        font-size: 1.2em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        color: rgb(54, 53, 53);
+      }
+      
+      .thT {
+        padding: 18px;
+      }
+      
+      .tdT {
+        border-right: 1px solid #30344c;
+        padding: 18px;
+      }
+      
+      .evenT {
+        background-color: #e8f4fc;
+        border-radius: 0 0 10px 10px; /* Rounded corners for even table rows */
+      }
+      
+      .oddt {
+        background-color: #89b4b4;
+        border-radius: 0 0 10px 10px; /* Rounded corners for odd table rows */
+      }
+
+      #tab11{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self:center;
+   
+        flex-direction: column;
+        justify-content: right;
+
+      
+      }
+
+
+      #tabb2{
+
+  
+   
+        display: inline-block; 
+        align-items: center;
+        justify-content: center;
+        align-self:center;
+   
+        flex-direction: column;
+        justify-content: right;
+
+      
+      }
+      .button_holder{
+       background-color: #0ba360;
+       color: #ffffff;
+       border: none;
+       margin: 10px;
+       font-size: 19px;
+       border-radius: 5px;
+      }
+      .button_holder:disabled{
+        background-color: #214e3b;
+      }
+    h2{
+        color: wheat;
+    }
+
+    
+    #tabb3{
+
+ display: inline-block; 
+        margin: 10px;
+        align-items: center;
+        justify-content: center;
+        align-self:center;
+   
+        flex-direction: column;
+        justify-content: right;
+        max-width: 400px;
+      
+      }
+
+
+      
+    
+    #tabb4{
+
+        display:flex; 
+     
+ 
+               align-items: center;
+               justify-content: center;
+               align-self:center;
+          
+               flex-direction: column;
+             
+               max-width: 400px;
+               margin-left:70px ;
+             
+             }
+             .tdT2{
+                padding: 20px;
+             }
+
+             .viewTab {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                max-width: 1400px;
+                margin: 0 auto; /* Center horizontally */
+                flex-wrap: wrap;
+            }
+            
+
+             @media only screen and (max-width: 1473px) {
+
+
+                .viewTab{
+                    flex-direction: column;
+                }
+
+             }

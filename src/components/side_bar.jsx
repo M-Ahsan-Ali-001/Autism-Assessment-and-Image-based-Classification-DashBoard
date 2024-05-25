@@ -6,7 +6,7 @@ function Sidebar({butD,setbutD}) {
 
 
 
-  const listButtons = ["Dashboard", "Users", "search"];
+  const listButtons = ["Dashboard", "Users", "search","Instruction"];
 
   let choice=document.getElementById("Dashboard")
   return <div id="side-bar" >
@@ -51,6 +51,7 @@ listButtons.forEach((obj)=>{
 ))}
 
 </div>
+
 
 
   </div>;

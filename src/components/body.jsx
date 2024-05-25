@@ -8,6 +8,7 @@ import AI from "../pages/ai"
 import ADHD from "../pages/adhd"
 import { useCookies } from 'react-cookie';
 import SR from "../pages/search";
+import Instruction from "../pages/instruction";
 function Body({condi,setLogin}) {
 
   const [cookies, setCookie] = useCookies(['user']);
@@ -46,7 +47,7 @@ function Body({condi,setLogin}) {
       </div>
       
       <div className="App">
-     {condi === "Dashboard"?(<Dashboard />):condi === "Users"?(<Users/>):condi === "search"?(<SR/>):null}
+     {condi === "Dashboard"?(<Dashboard />):condi === "Users"?(<Users/>):condi === "search"?(<SR/>):condi === "Instruction"?(<Instruction/>):null}
 
 
      
