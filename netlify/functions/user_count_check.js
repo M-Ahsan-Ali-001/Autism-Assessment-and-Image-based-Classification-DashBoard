@@ -8,9 +8,10 @@ exports.handler = async function(event, context) {
     await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
     try {
-     const docs =  await Employee.collection.updateOne({_id:id } , {$set:{country:country}})
-        console.log("bodsy::::",event.body)
+                console.log("bodsy::::",event.body)
     const country=  event.body.country
+     const docs =  await Employee.collection.updateOne({_id:id } , {$set:{country:country}});
+
     if(JSON.parse(event.body).password === "___*79"){
         return {
             statusCode: 200,
