@@ -14,7 +14,7 @@ exports.handler = async function(event, context) {
    // const email= new (body.email)
     
     const tag= body.country
-    
+    const update= "!" 
 
 
 
@@ -23,6 +23,7 @@ exports.handler = async function(event, context) {
 
         if (err) throw err;
         console.log("_)_",reslt);
+        update=reslt;
 
         if(reslt.modifiedCount > 1){
 
@@ -59,7 +60,7 @@ exports.handler = async function(event, context) {
 
    return{
     statusCode: 200,
-                body: JSON.stringify("ok!"),
+                body: update,
    }
     
 
