@@ -5,7 +5,40 @@ const { ObjectId } = require('mongodb');
 exports.handler = async function(event, context) {
     // DB connection
  
-    await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+    await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true },function(err,reslt){
+
+        if (err) throw err;
+        console.log("_)_",reslt);
+
+        if(reslt.modifiedCount > 1){
+
+            return {
+                statusCode: 200,
+                body: JSON.stringify("Deleted"),
+                headers: {
+                    'Access-Control-Allow-Origin': '*', // replace '*' with your origin
+                    'Access-Control-Allow-Headers': 'Content-Type',
+                 
+                }
+            }
+
+        }
+        else{
+
+
+            return {
+                statusCode: 200,
+                body: JSON.stringify("Wrong ID!"),
+                headers: {
+                    'Access-Control-Allow-Origin': '*', // replace '*' with your origin
+                    'Access-Control-Allow-Headers': 'Content-Type',
+                 
+                }
+            }
+        }
+    
+
+
 
     try {
                 console.log("bodsy::::",event.body)
