@@ -10,7 +10,7 @@ exports.handler = async function(event, context) {
     console.log("+++++asdasdasd",(event.body))
     const body = JSON.parse(event.body)
     const id= new ObjectId(body.id)
-    
+    console.log(id);
    // const email= new (body.email)
     
     const country= body.country
