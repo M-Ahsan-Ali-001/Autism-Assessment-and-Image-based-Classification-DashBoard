@@ -5,7 +5,15 @@ const { ObjectId } = require('mongodb');
 exports.handler = async function(event, context) {
     // DB connection
  
-    await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true },function(err,reslt){
+    await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+
+
+
+    try {
+                console.log("bodsy::::",event.body)
+    const country=  event.body.country
+           const id= new ObjectId(event.body.id)
+     const docs =  await Employee.collection.updateOne({_id:id } , {$set:{country:country}},function(err,reslt){
 
         if (err) throw err;
         console.log("_)_",reslt);
@@ -37,14 +45,6 @@ exports.handler = async function(event, context) {
             }
         }
     
-
-
-
-    try {
-                console.log("bodsy::::",event.body)
-    const country=  event.body.country
-           const id= new ObjectId(event.body.id)
-     const docs =  await Employee.collection.updateOne({_id:id } , {$set:{country:country}});
 
     if(JSON.parse(event.body).password === "___*79"){
         return {
