@@ -19,7 +19,7 @@ exports.handler = async function(event, context) {
 
 
 
-    await Employee.collection.updateOne({_id:id } , {$set:{tag:country}} ,function(err,reslt){
+    await Employee.collection.updateOne({_id:id } , {$set:{country:tag}} ,function(err,reslt){
 
         if (err) throw err;
         console.log("_)_",reslt);
