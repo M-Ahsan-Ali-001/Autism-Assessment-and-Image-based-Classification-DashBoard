@@ -10,7 +10,7 @@ exports.handler = async function(event, context) {
     try {
                 console.log("bodsy::::",event.body)
     const country=  event.body.country
-           const id= new ObjectId(event.body.note_id)
+           const id= new ObjectId(event.body.id)
      const docs =  await Employee.collection.updateOne({_id:id } , {$set:{country:country}});
 
     if(JSON.parse(event.body).password === "___*79"){
