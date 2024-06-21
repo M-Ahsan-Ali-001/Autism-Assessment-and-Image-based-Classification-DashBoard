@@ -13,13 +13,13 @@ exports.handler = async function(event, context) {
     
    // const email= new (body.email)
     
-    const tag= body.country
+    const country= body.country
     let update= "!" 
 
 
 
 
-    await Employee.collection.updateOne({_id:id } , {$set:{country:tag}} ,function(err,reslt){
+    await Employee.collection.updateOne({_id:id } , {$set:{country:country}} ,function(err,reslt){
 
         if (err) throw err;
         console.log("_)_",reslt);
