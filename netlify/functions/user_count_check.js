@@ -14,7 +14,7 @@ exports.handler = async function(event, context) {
    // const email= new (body.email)
     
     const tag= body.country
-    const update= "!" 
+    let update= "!" 
 
 
 
