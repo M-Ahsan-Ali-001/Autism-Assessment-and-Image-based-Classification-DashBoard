@@ -4,16 +4,22 @@ const mongoURI = "mongodb+srv://admin:admin123@atlascluster.f9crw3i.mongodb.net/
 const { ObjectId } = require('mongodb');
 exports.handler = async function(event, context) {
     // DB connection
- 
-    await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+  try{
+
+    console.log("+++++asdasdasd",(event.body))
+    const body = JSON.parse(event.body)
+    const id= new ObjectId(body.id)
+    
+   // const email= new (body.email)
+    
+    const tag= body.country
+    
 
 
 
-    try {
-                console.log("bodsy::::",event.body)
-    const country=  event.body.country
-           const id= new ObjectId(event.body.id)
-     const docs =  await Employee.collection.updateOne({_id:id } , {$set:{country:country}},function(err,reslt){
+
+    await Employee.collection.updateOne({_id:id } , {$set:{tag:country}} ,function(err,reslt){
 
         if (err) throw err;
         console.log("_)_",reslt);
@@ -46,40 +52,33 @@ exports.handler = async function(event, context) {
         }
     
 
-    if(JSON.parse(event.body).password === "___*79"){
-        return {
-            statusCode: 200,
-            body:  JSON.stringify(docs),
-            headers: {
-                'Access-Control-Allow-Origin': '*', // replace '*' with your origin
-                
-                "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-                "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With"
-                }
-           
-        };
-    } 
-    else{
-        return{
 
-            statusCode: 200,
-            body: JSON.stringify("Access Denied !"),
-             headers: {
-                'Access-Control-Allow-Origin': '*', // replace '*' with your originpubl
-                'Access-Control-Allow-Headers': 'Content-Type'
-                }
-    }
-    }
+    })
+     
+
+
+   return{
+    statusCode: 200,
+                body: JSON.stringify("ok!"),
+   }
     
-    } catch (err) {
-        console.log('error', err);
-        return {
-            statusCode: 200,
-            body: JSON.stringify('Internal Server Error'),
-            headers: {
-                'Access-Control-Allow-Origin': '*', // replace '*' with your origin
-                'Access-Control-Allow-Headers': 'Content-Type'
-            }
-        };
-    }
-};
+
+  }
+
+  catch(err){
+
+    console.log("__error___",err)
+    return {
+        statusCode: 200,
+        
+        body:'erroe',
+        headers: {
+            'Access-Control-Allow-Origin': '*', // replace '*' with your origin
+            'Access-Control-Allow-Headers': 'Content-Type',
+    
+        }
+    };
+
+  }
+  
+  };
